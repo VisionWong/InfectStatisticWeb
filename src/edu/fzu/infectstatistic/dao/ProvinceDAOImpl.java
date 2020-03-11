@@ -56,8 +56,21 @@ public class ProvinceDAOImpl implements ProvinceDAO{
 
 	@Override
 	public Province getNationData() {
-		// TODO Auto-generated method stub
-		return null;
+		int ip,sp,cure,dead;
+		ip = sp = cure = dead = 0;
+		String sql = "select * from record";
+        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {           
+        	ResultSet rs = ps.executeQuery(sql);            
+            while (rs.next()) {
+                ip += rs.getInt("ip");
+                sp += rs.getInt("sp");
+                cure += rs.getInt("cure");
+                dead += rs.getInt("dead");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return new Province("全国", ip, sp, cure, dead);
 	}
 	
 }
