@@ -7,4 +7,5 @@ import edu.fzu.infectstatistic.pojo.Province;
 public interface ProvinceDAO {
 	Province getStatisticData(String name, Date date);
 	Province getChangedData(String name, Date date);
+	Province getNationData();
 }
