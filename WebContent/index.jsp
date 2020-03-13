@@ -9,18 +9,25 @@
 <meta http-equiv="Content-Type" content="text/html">
 <title>Document</title>
 <script type="text/javascript" src="JS/echarts.min.js"></script>
-<script src="JS/china.js"></script>
 
+<script src="JS/china.js"></script>
+<script src="JS/provinceTable.js"></script>
 <style>
 #option {
 	width: 150px;
 }
 
+#provinceTable{
+width:450px;
+height:450px;
+margin:auto;
+}
+
 #china-map {
-	width: 1000px;
-	height: 1000px;
+	width:1000px;
+    height:1000px;
 	margin: auto;
-	background:#CCCCCC;
+	background:#EEEEEE;
 }
 
 #dateOp {
@@ -81,6 +88,12 @@ font-size:20px;
 margin: auto;
 }
 
+.div{
+width: 200px;
+    height: 200px;
+    background: #ff0000;
+    position: absolute;
+}
 </style>
 </head>
 
@@ -168,7 +181,13 @@ margin: auto;
 	</script>
 	</div>
 
-	<div id="china-map"></div>
+	<div id="china-map">
+	</div>
+	
+	<div id="provinceTable">
+	</div>
+	
+	
 	<script type="text/javascript">
 		/**
 		 * 
@@ -187,7 +206,7 @@ margin: auto;
 				y : 'center',
 				splitList : [ {
 					start : 1500,
-					color : 'black'
+					color :  'black'
 					
 				}, {
 					start : 900,
@@ -375,35 +394,55 @@ margin: auto;
 				} ]
 			} ]
 		};
-		var myChart = echarts.init(document.getElementById('china-map'));
-		myChart.setOption(option);
 		
+		var myChart = echarts.init(document.getElementById('china-map'));
+		myChart.setOption(option,true);
+		
+	//	myChart.off('click');
+	
+	function doit(e){
+ var obj = document.getElementById("provinceTable"); 
+ obj.style.left = e.pageX+10; 
+ obj.style.top = e.pageY+10;   
+}
+window.onload=function(){ 
+	document.body.onmousemove = doit(event); 
+	} 
+	
+	
 		myChart.on('click', function (params) {
 		    var city = params.name;
-		   // loadChart(city); 
-		    
-		   
-		  option = {
-		    	    xAxis: {
-		    	        type: 'category',
-		    	        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-		    	    },
-		    	    yAxis: {
-		    	        type: 'value'
-		    	    },
-		    	    series: [{
-		    	        data: [820, 932, 901, 934, 1290, 1330, 1320],
-		    	        type: 'line',
-		    	        smooth: true
-		    	    }]
-		    	};
-
-		    
-		    
-		    
+		   //loadChart(city);
+		//  getTable(city);
+		  //console.log(getTable(city)); 
+		//  myChart.clear();
+		 // document.getElementById("china-map").style.visibility="hidden";//隐藏
+		  var myChart1 = echarts.init(document.getElementById('provinceTable'));
+		//  document.getElementById("china-map").style.visibility='';//隐藏
+		 myChart1.setOption(getTable(city),true);
+		   // document.getElementById("head").innerHTML = city;	    
 		});
-
+		
+		//myChart.off('click');
+	
+		//myChart.on('click', function (params) {
+	//	    var city = params.name;
+		   //loadChart(city);
+		//  getTable(city);
+		  //console.log(getTable(city)); 
+	//	  myChart.clear();
+		// myChart.setOption(option);
+		   // document.getElementById("head").innerHTML = city;	    
+	//	});
+		
+		
+		
 	</script>
+<script>
+
+
+
+</script>
 
 
 </body>
