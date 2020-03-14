@@ -38,7 +38,7 @@ body {
     .center_bottom input {
         color: #03515d;
         font-size: 12px;
-        height: 20px;
+       
         width: 40px;
         padding: 2px;
         vertical-align: middle;
@@ -60,7 +60,7 @@ body {
  
 
     .center_center {
-        height: 400px;
+       
         width: 900px;
         float: left;
     }
@@ -80,7 +80,7 @@ body {
         margin: 5px;
         border: 1px dashed #FFF0F5;
         width: 1000px;
-        height: 375px;
+       
         overflow-x: hidden;
         overflow-y: auto;
     }
@@ -89,7 +89,7 @@ body {
         .table_content table {
             width: 100%;
             border: 0;
-            border-collapse: collapse;
+          
             font-size: 12px;
         }
 
@@ -219,7 +219,6 @@ width: 200px;
 		
 <div class="table_div">
     <div class="div_clear">
-        
         <div class="center_top">                     
                 <span style="font-weight:bold">全国疫情数据</span>：       
         </div>
@@ -237,44 +236,50 @@ width: 200px;
                         </tr>
                     </thead>
                     <tbody>
- <div class="center_top">                     
-                <span style="font-weight:bold">全国疫情数据</span>：       
-        </div>
                         <tr>
-                            <td width="15%">1605010104</td>
-                            <td width="15%">像风一样</td>
-                            <td width="10%">你靠近</td>
-                            <td width="15%">云就投降</td>
-                            <td width="15%">风雪是你</td>
+                            <td width="15%">1</td>
+                            <td width="15%">2</td>
+                            <td width="10%">3</td>
+                            <td width="15%">4</td>
+                            <td width="15%">5</td>
                            
-                            <td width="15%" style="border-right:none">
-                               
-                              
-                            </td>
                         </tr>
+                    </tbody>
+                </table>
+            </div>       
+       </div>
+    </div>
+	</div>
+
+<div class="table_div">
+    <div class="div_clear">
+        
+        <div class="center_top">                     
+                <span style="font-weight:bold">地区疫情数据</span>：       
+        </div>
+    </div>
+        <div class="center_center">
+            <div class="table_content">
+                <table cellspacing="0px" cellpadding="0px">
+                    <thead>
                         <tr>
                             <th width="15%">现有确诊</th>
                             <th width="15%">现有疑似</th>
                              <th width="15%">累计确诊</th>
                             <th width="10%">累计治愈</th>
                             <th width="15%">累计死亡</th>
-                            
                         </tr>
+                    </thead>
+                    <tbody>
+ 
                         <tr>
-                            <td width="15%">1605010104</td>
-                            <td width="15%">像风一样</td>
-                            <td width="10%">你靠近</td>
-                            <td width="15%">云就投降</td>
-                            <td width="15%">风雪是你</td>
-                          
-                            <td width="15%" style="border-right:none">
-                               
-                             
-                            </td>
+                            <td width="15%">1</td>
+                            <td width="15%">2</td>
+                            <td width="10%">3</td>
+                            <td width="15%">4</td>
+                            <td width="15%">5</td>
+                           
                         </tr>
-                        
-                        
-                        
                     </tbody>
                 </table>
             </div>       
@@ -282,8 +287,6 @@ width: 200px;
     </div>
    
 	</div>
-
-
 	
 
 	<div id="china-map">
