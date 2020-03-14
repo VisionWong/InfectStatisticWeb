@@ -237,9 +237,7 @@ width: 200px;
                         </tr>
                     </thead>
                     <tbody>
- <div class="center_top">                     
-                <span style="font-weight:bold">全国疫情数据</span>：       
-        </div>
+ 
                         <tr>
                             <td width="15%">1605010104</td>
                             <td width="15%">像风一样</td>
@@ -247,34 +245,7 @@ width: 200px;
                             <td width="15%">云就投降</td>
                             <td width="15%">风雪是你</td>
                            
-                            <td width="15%" style="border-right:none">
-                               
-                              
-                            </td>
                         </tr>
-                        <tr>
-                            <th width="15%">现有确诊</th>
-                            <th width="15%">现有疑似</th>
-                             <th width="15%">累计确诊</th>
-                            <th width="10%">累计治愈</th>
-                            <th width="15%">累计死亡</th>
-                            
-                        </tr>
-                        <tr>
-                            <td width="15%">1605010104</td>
-                            <td width="15%">像风一样</td>
-                            <td width="10%">你靠近</td>
-                            <td width="15%">云就投降</td>
-                            <td width="15%">风雪是你</td>
-                          
-                            <td width="15%" style="border-right:none">
-                               
-                             
-                            </td>
-                        </tr>
-                        
-                        
-                        
                     </tbody>
                 </table>
             </div>       

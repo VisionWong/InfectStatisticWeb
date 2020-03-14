@@ -5,7 +5,7 @@ function getTable(city){
 	//alert(city);
 	option = {
 		    title: {
-		        text: city+"疫情数据"
+		        text: city+"实况"
 		    },
 		    tooltip: {
 		        trigger: 'axis'
