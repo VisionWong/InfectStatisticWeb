@@ -247,7 +247,7 @@ width: 200px;
                         <tr>
                             <td width="15%"><%=data.getIp() %></td>
                             <td width="15%"><%=data.getSp() %></td>
-                            <td width="10%"><%=data.getIp()+data.getCure()+data.getDead() %></td>
+                            <td width="10%"><%=data.getTotalIp() %></td>
                             <td width="15%"><%=data.getCure() %></td>
                             <td width="15%"><%=data.getDead() %></td>
                            
@@ -281,7 +281,7 @@ width: 200px;
                     <tbody>
  
                         <tr>
-                            <td width="15%">1</td>
+                            <td width="15%"><%= %></td>
                             <td width="15%">2</td>
                             <td width="10%">3</td>
                             <td width="15%">4</td>
