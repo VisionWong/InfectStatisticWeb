@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import edu.fzu.infectstatistic.pojo.Province;
 import edu.fzu.infectstatistic.util.DBUtil;

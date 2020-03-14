@@ -1,3 +1,6 @@
+<%@page import="edu.fzu.infectstatistic.dao.ProvinceDAOImpl"%>
+<%@page import="edu.fzu.infectstatistic.dao.ProvinceDAO"%>
+<%@page import="edu.fzu.infectstatistic.pojo.Province"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -236,12 +239,17 @@ width: 200px;
                         </tr>
                     </thead>
                     <tbody>
+                    	<%
+                    	    ProvinceDAO dao = new ProvinceDAOImpl();
+                    		//获取全国的数据
+                    		Province data = dao.getNationData();
+                    	%>
                         <tr>
-                            <td width="15%">1</td>
-                            <td width="15%">2</td>
-                            <td width="10%">3</td>
-                            <td width="15%">4</td>
-                            <td width="15%">5</td>
+                            <td width="15%"><%=data.getIp() %></td>
+                            <td width="15%"><%=data.getSp() %></td>
+                            <td width="10%"><%=data.getIp()+data.getCure()+data.getDead() %></td>
+                            <td width="15%"><%=data.getCure() %></td>
+                            <td width="15%"><%=data.getDead() %></td>
                            
                         </tr>
                     </tbody>
