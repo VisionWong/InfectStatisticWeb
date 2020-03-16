@@ -4,6 +4,9 @@
 <%@page import="edu.fzu.infectstatistic.dao.ProvinceDAOImpl"%>
 <%@page import="edu.fzu.infectstatistic.dao.ProvinceDAO"%>
 <%@page import="edu.fzu.infectstatistic.pojo.Province"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.GregorianCalendar"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -201,10 +204,7 @@ width: 200px;
 			String newDate = "2020-1-29";
 			date = Date.valueOf(newDate);		
 		}
-		data = dao.getStatisticData(cityStr, date);
-		//定义日期数组，比较过去五天的数据
-		Date[] dateArray = new Date[5];
-		
+		data = dao.getStatisticData(cityStr, date); 
 	%>
 
 

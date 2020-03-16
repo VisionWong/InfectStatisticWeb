@@ -17,7 +17,7 @@ public class ProvinceDAOImpl implements ProvinceDAO{
 		int ip,sp,cure,dead;
 		ip = sp = cure = dead = 0;
 		//String sql = "select * from record where province=? && date<=?";
-		String sql = "select * from record where province='"+name+"' && date<=" + date;
+		String sql = "select * from record where province='"+name+"' && Date(date)<='" + date + "'";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {           
             //ps.setString(1, name);
             //ps.setDate(2, date);
@@ -39,7 +39,7 @@ public class ProvinceDAOImpl implements ProvinceDAO{
 		int ip,sp,cure,dead;
 		ip = sp = cure = dead = 0;
 		//String sql = "select * from record where province=? && date=?";
-		String sql = "select * from record where province='"+name+"' && date=" + date;
+		String sql = "select * from record where province='"+name+"' && Date(date)=" + date+ "'";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {           
             //ps.setString(1, name);
             //ps.setDate(2, date);
@@ -79,7 +79,7 @@ public class ProvinceDAOImpl implements ProvinceDAO{
 	public Province getNationDataByDate(Date date) {
 		int ip,sp,cure,dead;
 		ip = sp = cure = dead = 0;
-		String sql = "select * from record where date<=" + date;
+		String sql = "select * from record where Date(date)<= '" + date.toString() + "'";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {           
         	ResultSet rs = ps.executeQuery(sql);            
             while (rs.next()) {
