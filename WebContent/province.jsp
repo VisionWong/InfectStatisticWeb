@@ -80,7 +80,6 @@ body {
         margin: 5px;
         border: 1px dashed #FFF0F5;
         width: 1000px;
-       
         overflow-x: hidden;
         overflow-y: auto;
     }
@@ -119,7 +118,7 @@ body {
 
 
 
-.dateOp{
+.dateOp form{
             background:rgba(0,0,0,0.2);
             width:298px;
             height:60px;
@@ -151,11 +150,10 @@ text-align:center;}
 }
 
 #provinceTable{
-width:600px;
+width:900px;
 height:500px;
-margin-top:200px;
-background:#FFF0F5;
-
+margin-top:160px;
+background:#FFFAFA;
 }
 
 
@@ -184,8 +182,8 @@ width: 200px;
 
 <body>
 	<div class="dateOp">
+	 <form action="test1.jsp" method="post">
 		<select id="ghDate">
-			<option value="">请选择日期</option>
 			<script type="text/javascript">
 				function GetDateStr(AddDayCount) {
 					var dd = new Date(2020, 1, 18);
@@ -203,12 +201,12 @@ width: 200px;
 				document.writeln(optionStr);
 			</script>
 		</select>
+		</form>
 	</div>
 
 	<div id="statisticTable">
 <div class="table_div">
     <div class="div_clear">
-        
         <div class="center_top">                     
                 <span style="font-weight:bold">地区疫情数据</span>：       
         </div>
@@ -240,7 +238,6 @@ width: 200px;
             </div>       
        </div>
     </div>
-   
 	</div>
 	
 	<div id="provinceTable">
@@ -249,7 +246,7 @@ width: 200px;
 	<script type="text/javascript"> 
 	option = {
 		    title: {
-		        text: city+"实况"
+		        text:""
 		    },
 		    tooltip: {
 		        trigger: 'axis'
@@ -307,13 +304,11 @@ width: 200px;
 		        }
 		    ]
 		};
-	
 	var myChart = echarts.init(document.getElementById('provinceTable'));
-	myChart.setOption(option,true);
-	
+	myChart.setOption(option);
+		
 		</script>
 	
-
 
 </body>
 </html>
