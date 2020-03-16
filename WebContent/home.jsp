@@ -124,6 +124,10 @@ body span {
 	border-radius: 10px;
 }
 
+.dateOp input{
+	float:right;
+}
+
 .dateOp select {
 	background: transpqrent;
 	width: 300px;

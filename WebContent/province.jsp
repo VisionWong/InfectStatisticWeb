@@ -197,36 +197,16 @@ width: 200px;
 		}
 		System.out.println("省份页面收到的日期为:" + date);
 		if (date == null){
-			date = new Date(2020,1,29);			
+			//默认设置为最新日期
+			String newDate = "2020-1-29";
+			date = Date.valueOf(newDate);		
 		}
 		data = dao.getStatisticData(cityStr, date);
 		//定义日期数组，比较过去五天的数据
 		Date[] dateArray = new Date[5];
 		
 	%>
-	<div class="dateOp">
-	 <form action="dateProvinceServlet" method="post">
-		<select id="ghDate" name="date">
-			<script type="text/javascript">
-				function GetDateStr(AddDayCount) {
-					var dd = new Date(2020, 1, 18);
-					dd.setDate(dd.getDate() + AddDayCount);
-					var y = dd.getFullYear();
-					var m = dd.getMonth();//获取当前月份的日期
-					var d = dd.getDate();
-					return y + "-" + m + "-" + d;
-				}
-				var optionStr = "";
-				for (var i = 1; i <= 11; i++) {
-					optionStr += '<option value="' + GetDateStr(i) + '">'
-							+ GetDateStr(i) + '</option>';
-				}
-				document.writeln(optionStr);
-			</script>
-		</select>
-		<input type="submit" value="确认" />
-		</form>
-	</div>
+
 
 	<div id="statisticTable">
 <div class="table_div">
