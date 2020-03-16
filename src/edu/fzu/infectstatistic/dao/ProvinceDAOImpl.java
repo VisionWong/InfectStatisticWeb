@@ -1,5 +1,6 @@
 package edu.fzu.infectstatistic.dao;
 
+import java.awt.color.ICC_ColorSpace;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -72,4 +73,22 @@ public class ProvinceDAOImpl implements ProvinceDAO{
         return new Province("全国", ip, sp, cure, dead);
 	}
 	
+	@Override
+	public Province getNationDataByDate(Date date) {
+		int ip,sp,cure,dead;
+		ip = sp = cure = dead = 0;
+		String sql = "select * from record where date<=" + date;
+        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {           
+        	ResultSet rs = ps.executeQuery(sql);            
+            while (rs.next()) {
+                ip += rs.getInt("ip");
+                sp += rs.getInt("sp");
+                cure += rs.getInt("cure");
+                dead += rs.getInt("dead");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return new Province("全国", ip, sp, cure, dead);
+	}
 }
