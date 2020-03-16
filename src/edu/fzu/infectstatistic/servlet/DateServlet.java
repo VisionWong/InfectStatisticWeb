@@ -36,6 +36,7 @@ public class DateServlet extends HttpServlet {
 			 ProvinceDAO dao = new ProvinceDAOImpl();
 			 Province data = dao.getNationDataByDate(date);
 			 request.setAttribute("newData", data);
+			 request.setAttribute("date", date);
 			 request.getRequestDispatcher("/home.jsp").forward(request,response);
 		 }
 		 else {

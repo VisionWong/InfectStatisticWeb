@@ -1,3 +1,7 @@
+<%@page import="java.sql.Date"%>
+<%@page import="edu.fzu.infectstatistic.dao.ProvinceDAOImpl"%>
+<%@page import="edu.fzu.infectstatistic.dao.ProvinceDAO"%>
+<%@page import="edu.fzu.infectstatistic.pojo.Province"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -181,8 +185,8 @@ body {
 <body>
 
 	<div class="dateOp">
-	 <form action="test1.jsp" method="post">
-		<select id="ghDate">
+	 <form action="dateServlet" method="post">
+		<select id="ghDate" name="date">
 			<script type="text/javascript">
 				function GetDateStr(AddDayCount) {
 					var dd = new Date(2020, 1, 18);
@@ -200,6 +204,8 @@ body {
 				document.writeln(optionStr);
 			</script>
 		</select>
+		<input type="submit" value="确认" />
+	</form>
 	</div>
 
 	<div id="statisticTable">
@@ -223,13 +229,22 @@ body {
 							</tr>
 						</thead>
 						<tbody>
+						<%
+                    	    ProvinceDAO dao = new ProvinceDAOImpl();
+							//查看是否有后端发来的数据
+							Province data = (Province)request.getAttribute("newData");
+							Date date = (Date)request.getAttribute("date"); 
+							if (data == null){
+								//获取当前日期全国的数据
+	                    		data = dao.getNationData();
+							}                   		
+                    	%>
 							<tr>
-								<td width="15%">1</td>
-								<td width="15%">2</td>
-								<td width="10%">3</td>
-								<td width="15%">4</td>
-								<td width="15%">5</td>
-
+								<td width="15%"><%=data.getIp() %></td>
+                            	<td width="15%"><%=data.getSp() %></td>
+                            	<td width="10%"><%=data.getTotalIp() %></td>
+                            	<td width="15%"><%=data.getCure() %></td>
+                            	<td width="15%"><%=data.getDead() %></td>
 							</tr>
 						</tbody>
 					</table>
@@ -238,7 +253,7 @@ body {
 		</div>
 	</div>
 
-
+	
 	<div id="china-map"></div>
 	<script type="text/javascript">
 		var option = {
@@ -318,106 +333,106 @@ body {
 				top : "3%",//组件距离容器的距离
 				data : [ {
 					name : '北京',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("北京", date) %>
 				}, {
 					name : '天津',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("天津", date) %>
 				}, {
 					name : '上海',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("上海", date) %>
 				}, {
 					name : '重庆',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("重庆", date) %>
 				}, {
 					name : '河北',
-					value : 0
+					value : <%=date==null?0:dao.getStatisticData("河北", date) %>
 				}, {
 					name : '河南',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("河南", date) %>
 				}, {
 					name : '云南',
-					value : 5
+					value : <%=date==null?0:dao.getStatisticData("云南", date) %>
 				}, {
 					name : '辽宁',
-					value : 305
+					value : <%=date==null?0:dao.getStatisticData("辽宁", date) %>
 				}, {
 					name : '黑龙江',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("黑龙江", date) %>
 				}, {
 					name : '湖南',
-					value : 200
+					value : <%=date==null?0:dao.getStatisticData("湖南", date) %>
 				}, {
 					name : '安徽',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("安徽", date) %>
 				}, {
 					name : '山东',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("山东", date) %>
 				}, {
 					name : '新疆',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("新疆", date) %>
 				}, {
 					name : '江苏',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("江苏", date) %>
 				}, {
 					name : '浙江',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("浙江", date) %>
 				}, {
 					name : '江西',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("江西", date) %>
 				}, {
 					name : '湖北',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("湖北", date) %>
 				}, {
 					name : '广西',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("广西", date) %>
 				}, {
 					name : '甘肃',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("甘肃", date) %>
 				}, {
 					name : '山西',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("山西", date) %>
 				}, {
 					name : '内蒙古',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("内蒙古", date) %>
 				}, {
 					name : '陕西',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("陕西", date) %>
 				}, {
 					name : '吉林',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("吉林", date) %>
 				}, {
 					name : '福建',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("福建", date) %>
 				}, {
 					name : '贵州',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("贵州", date) %>
 				}, {
 					name : '广东',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("广东", date) %>
 				}, {
 					name : '青海',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("青海", date) %>
 				}, {
 					name : '西藏',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("西藏", date) %>
 				}, {
 					name : '四川',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("四川", date) %>
 				}, {
 					name : '宁夏',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("宁夏", date) %>
 				}, {
 					name : '海南',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("海南", date) %>
 				}, {
 					name : '台湾',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("台湾", date) %>
 				}, {
 					name : '香港',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("香港", date) %>
 				}, {
 					name : '澳门',
-					value : Math.round(Math.random() * 2000)
+					value : <%=date==null?0:dao.getStatisticData("澳门", date) %>
 				} ]
 			} ]
 		};
