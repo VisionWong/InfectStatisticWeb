@@ -13,7 +13,7 @@ import edu.fzu.infectstatistic.dao.ProvinceDAO;
 import edu.fzu.infectstatistic.dao.ProvinceDAOImpl;
 import edu.fzu.infectstatistic.pojo.Province;
 
-@WebServlet("/userServlet")
+@WebServlet("/dateServlet")
 public class DateServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -35,9 +35,10 @@ public class DateServlet extends HttpServlet {
 		 if (date!=null) {
 			 ProvinceDAO dao = new ProvinceDAOImpl();
 			 Province data = dao.getNationDataByDate(date);
-			 request.setAttribute("newData", data);
-			 request.setAttribute("date", date);
-			 request.getRequestDispatcher("/home.jsp").forward(request,response);
+			 //request.setAttribute("newData", data);
+			 //request.setAttribute("date", date);			 
+			 //request.getRequestDispatcher("/home.jsp").forward(request,response);
+			 response.sendRedirect(request.getContextPath() + "/home.jsp?date="+date);
 		 }
 		 else {
 			System.out.println("日期数据错误！");

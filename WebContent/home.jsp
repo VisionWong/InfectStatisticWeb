@@ -232,12 +232,25 @@ body {
 						<%
                     	    ProvinceDAO dao = new ProvinceDAOImpl();
 							//查看是否有后端发来的数据
-							Province data = (Province)request.getAttribute("newData");
-							Date date = (Date)request.getAttribute("date"); 
+							Province data = null;
+							//Province data = (Province)request.getAttribute("newData");
+							String dateStr = request.getParameter("date");
+							Date date = null;
+							if (dateStr != null){
+								date = Date.valueOf(dateStr);
+							}
+							System.out.println("收到的日期为:" + date);
+							/*
 							if (data == null){
 								//获取当前日期全国的数据
 	                    		data = dao.getNationData();
-							}                   		
+							}  */
+							if (date == null){
+								data = dao.getNationData();
+							}
+							else{
+								data = dao.getNationDataByDate(date);
+							}
                     	%>
 							<tr>
 								<td width="15%"><%=data.getIp() %></td>

@@ -183,7 +183,7 @@ width: 200px;
 <body>
 	<div class="dateOp">
 	 <form action="test1.jsp" method="post">
-		<select id="ghDate">
+		<select id="ghDate" name="date">
 			<script type="text/javascript">
 				function GetDateStr(AddDayCount) {
 					var dd = new Date(2020, 1, 18);
