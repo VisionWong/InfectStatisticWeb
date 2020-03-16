@@ -346,113 +346,113 @@ body {
 				top : "3%",//组件距离容器的距离
 				data : [ {
 					name : '北京',
-					value : <%=date==null?0:dao.getStatisticData("北京", date) %>
+					value : <%=date==null?0:dao.getStatisticData("北京", date).getIp() %>
 				}, {
 					name : '天津',
-					value : <%=date==null?0:dao.getStatisticData("天津", date) %>
+					value : <%=date==null?0:dao.getStatisticData("天津", date).getIp() %>
 				}, {
 					name : '上海',
-					value : <%=date==null?0:dao.getStatisticData("上海", date) %>
+					value : <%=date==null?0:dao.getStatisticData("上海", date).getIp() %>
 				}, {
 					name : '重庆',
-					value : <%=date==null?0:dao.getStatisticData("重庆", date) %>
+					value : <%=date==null?0:dao.getStatisticData("重庆", date).getIp() %>
 				}, {
 					name : '河北',
-					value : <%=date==null?0:dao.getStatisticData("河北", date) %>
+					value : <%=date==null?0:dao.getStatisticData("河北", date).getIp() %>
 				}, {
 					name : '河南',
-					value : <%=date==null?0:dao.getStatisticData("河南", date) %>
+					value : <%=date==null?0:dao.getStatisticData("河南", date).getIp() %>
 				}, {
 					name : '云南',
-					value : <%=date==null?0:dao.getStatisticData("云南", date) %>
+					value : <%=date==null?0:dao.getStatisticData("云南", date).getIp() %>
 				}, {
 					name : '辽宁',
-					value : <%=date==null?0:dao.getStatisticData("辽宁", date) %>
+					value : <%=date==null?0:dao.getStatisticData("辽宁", date).getIp() %>
 				}, {
 					name : '黑龙江',
-					value : <%=date==null?0:dao.getStatisticData("黑龙江", date) %>
+					value : <%=date==null?0:dao.getStatisticData("黑龙江", date).getIp() %>
 				}, {
 					name : '湖南',
-					value : <%=date==null?0:dao.getStatisticData("湖南", date) %>
+					value : <%=date==null?0:dao.getStatisticData("湖南", date).getIp() %>
 				}, {
 					name : '安徽',
-					value : <%=date==null?0:dao.getStatisticData("安徽", date) %>
+					value : <%=date==null?0:dao.getStatisticData("安徽", date).getIp() %>
 				}, {
 					name : '山东',
-					value : <%=date==null?0:dao.getStatisticData("山东", date) %>
+					value : <%=date==null?0:dao.getStatisticData("山东", date).getIp() %>
 				}, {
 					name : '新疆',
-					value : <%=date==null?0:dao.getStatisticData("新疆", date) %>
+					value : <%=date==null?0:dao.getStatisticData("新疆", date).getIp() %>
 				}, {
 					name : '江苏',
-					value : <%=date==null?0:dao.getStatisticData("江苏", date) %>
+					value : <%=date==null?0:dao.getStatisticData("江苏", date).getIp() %>
 				}, {
 					name : '浙江',
-					value : <%=date==null?0:dao.getStatisticData("浙江", date) %>
+					value : <%=date==null?0:dao.getStatisticData("浙江", date).getIp() %>
 				}, {
 					name : '江西',
-					value : <%=date==null?0:dao.getStatisticData("江西", date) %>
+					value : <%=date==null?0:dao.getStatisticData("江西", date).getIp() %>
 				}, {
 					name : '湖北',
-					value : <%=date==null?0:dao.getStatisticData("湖北", date) %>
+					value : <%=date==null?0:dao.getStatisticData("湖北", date).getIp() %>
 				}, {
 					name : '广西',
-					value : <%=date==null?0:dao.getStatisticData("广西", date) %>
+					value : <%=date==null?0:dao.getStatisticData("广西", date).getIp() %>
 				}, {
 					name : '甘肃',
-					value : <%=date==null?0:dao.getStatisticData("甘肃", date) %>
+					value : <%=date==null?0:dao.getStatisticData("甘肃", date).getIp() %>
 				}, {
 					name : '山西',
-					value : <%=date==null?0:dao.getStatisticData("山西", date) %>
+					value : <%=date==null?0:dao.getStatisticData("山西", date).getIp() %>
 				}, {
 					name : '内蒙古',
-					value : <%=date==null?0:dao.getStatisticData("内蒙古", date) %>
+					value : <%=date==null?0:dao.getStatisticData("内蒙古", date).getIp() %>
 				}, {
 					name : '陕西',
-					value : <%=date==null?0:dao.getStatisticData("陕西", date) %>
+					value : <%=date==null?0:dao.getStatisticData("陕西", date).getIp() %>
 				}, {
 					name : '吉林',
-					value : <%=date==null?0:dao.getStatisticData("吉林", date) %>
+					value : <%=date==null?0:dao.getStatisticData("吉林", date).getIp() %>
 				}, {
 					name : '福建',
-					value : <%=date==null?0:dao.getStatisticData("福建", date) %>
+					value : <%=date==null?0:dao.getStatisticData("福建", date).getIp() %>
 				}, {
 					name : '贵州',
-					value : <%=date==null?0:dao.getStatisticData("贵州", date) %>
+					value : <%=date==null?0:dao.getStatisticData("贵州", date).getIp() %>
 				}, {
 					name : '广东',
-					value : <%=date==null?0:dao.getStatisticData("广东", date) %>
+					value : <%=date==null?0:dao.getStatisticData("广东", date).getIp() %>
 				}, {
 					name : '青海',
-					value : <%=date==null?0:dao.getStatisticData("青海", date) %>
+					value : <%=date==null?0:dao.getStatisticData("青海", date).getIp() %>
 				}, {
 					name : '西藏',
-					value : <%=date==null?0:dao.getStatisticData("西藏", date) %>
+					value : <%=date==null?0:dao.getStatisticData("西藏", date).getIp() %>
 				}, {
 					name : '四川',
-					value : <%=date==null?0:dao.getStatisticData("四川", date) %>
+					value : <%=date==null?0:dao.getStatisticData("四川", date).getIp() %>
 				}, {
 					name : '宁夏',
-					value : <%=date==null?0:dao.getStatisticData("宁夏", date) %>
+					value : <%=date==null?0:dao.getStatisticData("宁夏", date).getIp() %>
 				}, {
 					name : '海南',
-					value : <%=date==null?0:dao.getStatisticData("海南", date) %>
+					value : <%=date==null?0:dao.getStatisticData("海南", date).getIp() %>
 				}, {
 					name : '台湾',
-					value : <%=date==null?0:dao.getStatisticData("台湾", date) %>
+					value : <%=date==null?0:dao.getStatisticData("台湾", date).getIp() %>
 				}, {
 					name : '香港',
-					value : <%=date==null?0:dao.getStatisticData("香港", date) %>
+					value : <%=date==null?0:dao.getStatisticData("香港", date).getIp() %>
 				}, {
 					name : '澳门',
-					value : <%=date==null?0:dao.getStatisticData("澳门", date) %>
+					value : <%=date==null?0:dao.getStatisticData("澳门", date).getIp() %>
 				} ]
 			} ]
 		};
 
 		var myChart = echarts.init(document.getElementById('china-map'));
 		myChart.setOption(option, true);
-
+		<% System.out.println("test1");%>
 		myChart.on('click', function(params) {
 			var city = params.name;
 			window.location.href = "province.jsp?name=" + city;
