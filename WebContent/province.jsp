@@ -201,6 +201,8 @@ width: 200px;
 		}
 		data = dao.getStatisticData(cityStr, date);
 		//定义日期数组，比较过去五天的数据
+		Date[] dateArray = new Date[5];
+		
 	%>
 	<div class="dateOp">
 	 <form action="dateProvinceServlet" method="post">

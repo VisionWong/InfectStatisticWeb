@@ -248,7 +248,8 @@ body {
 							if (date == null){
 								data = dao.getNationData();
 								//默认设置为最新日期
-								date = new Date(2020,1,29);	 
+								String newDate = "2020-1-29";
+								date = Date.valueOf(newDate);
 							}
 							else{
 								data = dao.getNationDataByDate(date);
@@ -456,7 +457,7 @@ body {
 		myChart.setOption(option, true);
 		myChart.on('click', function(params) {
 			var city = params.name;
-			window.location.href = "province.jsp?name=" + city + "&date=" + date;
+			window.location.href = "province.jsp?name=" + city + "&date=<%=date%>";
 		});
 	</script>
 
