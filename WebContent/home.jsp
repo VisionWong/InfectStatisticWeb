@@ -197,7 +197,7 @@ body {
 					return y + "-" + m + "-" + d;
 				}
 				var optionStr = "";
-				for (var i = 1; i <= 15; i++) {
+				for (var i = 1; i <= 11; i++) {
 					optionStr += '<option value="' + GetDateStr(i) + '">'
 							+ GetDateStr(i) + '</option>';
 				}
@@ -247,6 +247,8 @@ body {
 							}  */
 							if (date == null){
 								data = dao.getNationData();
+								//默认设置为最新日期
+								date = new Date(2020,1,29);	 
 							}
 							else{
 								data = dao.getNationDataByDate(date);
@@ -452,10 +454,9 @@ body {
 
 		var myChart = echarts.init(document.getElementById('china-map'));
 		myChart.setOption(option, true);
-		<% System.out.println("test1");%>
 		myChart.on('click', function(params) {
 			var city = params.name;
-			window.location.href = "province.jsp?name=" + city;
+			window.location.href = "province.jsp?name=" + city + "&date=" + date;
 		});
 	</script>
 

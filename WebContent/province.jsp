@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="java.sql.Date"%>
+<%@page import="edu.fzu.infectstatistic.dao.ProvinceDAOImpl"%>
+<%@page import="edu.fzu.infectstatistic.dao.ProvinceDAO"%>
+<%@page import="edu.fzu.infectstatistic.pojo.Province"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -181,8 +185,25 @@ width: 200px;
 </head>
 
 <body>
+	<%
+		ProvinceDAO dao = new ProvinceDAOImpl();
+		//查看是否有日期参数
+		Province data = null;
+		String cityStr = request.getParameter("name");
+		String dateStr = request.getParameter("date");
+		Date date = null;
+		if (dateStr != null){
+			date = Date.valueOf(dateStr);
+		}
+		System.out.println("省份页面收到的日期为:" + date);
+		if (date == null){
+			date = new Date(2020,1,29);			
+		}
+		data = dao.getStatisticData(cityStr, date);
+		//定义日期数组，比较过去五天的数据
+	%>
 	<div class="dateOp">
-	 <form action="test1.jsp" method="post">
+	 <form action="dateProvinceServlet" method="post">
 		<select id="ghDate" name="date">
 			<script type="text/javascript">
 				function GetDateStr(AddDayCount) {
@@ -194,13 +215,14 @@ width: 200px;
 					return y + "-" + m + "-" + d;
 				}
 				var optionStr = "";
-				for (var i = 1; i <= 15; i++) {
+				for (var i = 1; i <= 11; i++) {
 					optionStr += '<option value="' + GetDateStr(i) + '">'
 							+ GetDateStr(i) + '</option>';
 				}
 				document.writeln(optionStr);
 			</script>
 		</select>
+		<input type="submit" value="确认" />
 		</form>
 	</div>
 
@@ -226,11 +248,11 @@ width: 200px;
                     <tbody>
  
                         <tr>
-                            <td width="15%">1</td>
-                            <td width="15%">2</td>
-                            <td width="10%">3</td>
-                            <td width="15%">4</td>
-                            <td width="15%">5</td>
+                            <td width="15%"><%=data.getIp() %></td>
+                            <td width="15%"><%=data.getSp() %></td>
+                            <td width="10%"><%=data.getTotalIp() %></td>
+                            <td width="15%"><%=data.getCure() %></td>
+                            <td width="15%"><%=data.getDead() %></td>
                            
                         </tr>
                     </tbody>
