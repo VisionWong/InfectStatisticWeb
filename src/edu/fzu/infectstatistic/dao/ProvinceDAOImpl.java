@@ -16,10 +16,11 @@ public class ProvinceDAOImpl implements ProvinceDAO{
 	public Province getStatisticData(String name, Date date) {
 		int ip,sp,cure,dead;
 		ip = sp = cure = dead = 0;
-		String sql = "select * from record where province=? && date<=?";
+		//String sql = "select * from record where province=? && date<=?";
+		String sql = "select * from record where province='"+name+"' && date<=" + date;
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {           
-            ps.setString(1, name);
-            ps.setDate(2, date);
+            //ps.setString(1, name);
+            //ps.setDate(2, date);
         	ResultSet rs = ps.executeQuery(sql);            
             while (rs.next()) {
                 ip += rs.getInt("ip");
@@ -37,10 +38,11 @@ public class ProvinceDAOImpl implements ProvinceDAO{
 	public Province getChangedData(String name, Date date) {
 		int ip,sp,cure,dead;
 		ip = sp = cure = dead = 0;
-		String sql = "select * from record where province=? && date=?";
+		//String sql = "select * from record where province=? && date=?";
+		String sql = "select * from record where province='"+name+"' && date=" + date;
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {           
-            ps.setString(1, name);
-            ps.setDate(2, date);
+            //ps.setString(1, name);
+            //ps.setDate(2, date);
         	ResultSet rs = ps.executeQuery(sql);            
             while (rs.next()) {
                 ip = rs.getInt("ip");
