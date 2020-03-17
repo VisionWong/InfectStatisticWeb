@@ -34,4 +34,8 @@ public class Province {
 	public int getDead() {
 		return dead;
 	}
+	
+	public int getTotalIp() {
+		return ip + cure + dead;
+	}
 }

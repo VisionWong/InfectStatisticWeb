@@ -8,4 +8,5 @@ public interface ProvinceDAO {
 	Province getStatisticData(String name, Date date);
 	Province getChangedData(String name, Date date);
 	Province getNationData();
+	Province getNationDataByDate(Date date);
 }
